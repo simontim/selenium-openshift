@@ -1,3 +1,5 @@
 FROM custom
 USER root
-CMD 
+RUN ls
+USER 1001
+CMD ["/usr/libexec/s2i/run"]
