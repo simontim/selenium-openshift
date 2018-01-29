@@ -14,8 +14,8 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
 # Driver browser    #
 #-------------------#
 
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz && \
-    tar -xzvf /home/geckodriver-v0.19.1-linux64.tar.gz 
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz -o /usr/bin/geckodriver-v0.19.1-linux64.tar.gz && \
+    tar -xzvf /usr/bin/geckodriver-v0.19.1-linux64.tar.gz 
     
 
 USER 1001
