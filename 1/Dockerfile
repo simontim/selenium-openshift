@@ -1,8 +1,13 @@
 FROM custom
 USER root
 
-RUN cd / && \
-    tar xvjf firefox-57.0.tar.bz2
+#RUN wget bzip.org/1.0.3/bzip2-1.0.3.tar.gz
+
+
+
+#RUN cd / && tar xvjf firefox-57.0.tar.bz2
+RUN yum update && \
+    yum install make
 
 USER 1001
 CMD ["/usr/libexec/s2i/run"]
