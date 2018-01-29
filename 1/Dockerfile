@@ -6,7 +6,7 @@ USER root
 
 
 #RUN cd / && tar xvjf firefox-57.0.tar.bz2
-RUN yum update && \
+RUN yum update -y && \
     yum install -y make
 
 USER 1001
