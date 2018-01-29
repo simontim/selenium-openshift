@@ -8,7 +8,8 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
     python /home/get-pip.py && \
     pip install virtualenv && \
     pip install virtualenvwrapper &&  \
-    pip install selenium
+    pip install selenium && \
+    yum install wget
 
 #-------------------#
 # Driver browser    #
