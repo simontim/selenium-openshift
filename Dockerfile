@@ -22,7 +22,7 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckod
     
 RUN wget http://ftp.mozilla.org/pub/firefox/releases/57.0/linux-x86_64/en-US/firefox-57.0.tar.bz2 && \
     tar xvjf firefox-57.0.tar.bz2 && \
-    ln -s /usr/local/firefox/firefox /usr/bin/firefox
+    ln -s /firefox/firefox /usr/bin/firefox
 
 USER 1001
 
