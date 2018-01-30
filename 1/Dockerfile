@@ -2,7 +2,7 @@ FROM custom
 USER root
 
 #RUN wget bzip.org/1.0.3/bzip2-1.0.3.tar.gz
-#RUN yum install -y bzip2
+RUN yum install -y bzip2
 RUN cd / && \
     tar xvjf firefox-57.0.tar.bz2
 
