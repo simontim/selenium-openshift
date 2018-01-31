@@ -1,6 +1,6 @@
 #bin/sh
 
 virtualenv ocp
-source bin/activate
+source ocp/bin/activate
 pip install pytest
 py.test
