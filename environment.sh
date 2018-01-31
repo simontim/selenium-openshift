@@ -1,4 +1,4 @@
-#bin/sh
+#!bin/bash
 
 virtualenv ocp
 source ocp/bin/activate
