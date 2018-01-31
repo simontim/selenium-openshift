@@ -10,7 +10,7 @@ def test_selenium():
     profile.accept_untrusted_certs = True
     profile.set_preference('dom.webnotifications.enabled', False)
 
-    driver = webdriver.Firefox(firefox_profile=profile)
+    driver = webdriver.Firefox()
     driver.get("http://www.python.org")
     assert "Python" in driver.title
     elem = driver.find_element_by_name("q")
