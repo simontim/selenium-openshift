@@ -1,8 +1,10 @@
-1517396199405	geckodriver	INFO	geckodriver 0.19.0
-1517396199405	geckodriver	INFO	Listening on 127.0.0.1:58697
-1517396199968	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofile.QFaaJ3EzZZSd"
-1517396200353	addons.manager	DEBUG	Application has been upgraded
-1517396200372	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider", "XPIInternal"]
+1517495983322	geckodriver	INFO	geckodriver 0.19.0
+1517495983330	geckodriver	INFO	Listening on 127.0.0.1:49866
+1517495983892	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\user\\AppData\\Local\\Temp\\rust_mozprofile.enYtxHhYKrR7"
+1517495986370	Marionette	INFO	Enabled via --marionette
+1517495990876	Marionette	INFO	Listening on port 49873
+1517495991089	Marionette	WARN	TLS certificate errors will be ignored for this session
+rnal"]
 1517396200374	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
 1517396200378	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
 1517396200380	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
