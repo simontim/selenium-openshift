@@ -30,9 +30,10 @@ def test_remote():
 
     driver = webdriver.Remote(
             #browser_profile=profile,
-            command_executor='http://selenium-node-chrome:4444/wd/hub',
+            #command_executor='http://selenium-node-chrome:4444/wd/hub',
             #command_executor='http://selenium-hub:4444/wd/hub',
-            #                  command_executor='http://127.0.0.1:4444/wd/hub',
+             #command_executor='http://127.0.0.1:4444/wd/hub',
+          command_executor='http://156.54.176.85:4444/wd/hub',
                               desired_capabilities=capabilities)
 
     #        command_executor='http://156.54.176.85:4444/wd/hub'
