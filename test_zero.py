@@ -23,7 +23,7 @@ def test_remote():
     # profile.accept_untrusted_certs = True
     # profile.set_preference('dom.webnotifications.enabled', False)
 
-    capabilities = DesiredCapabilities.CHROME  # .copy()
+    capabilities = DesiredCapabilities.FIREFOX  # .copy()
     capabilities['marionette'] = False
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
