@@ -27,8 +27,9 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckod
 #scarichi selenium server 3.9
 RUN wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.0.jar -O /opt/selenium/standalone.jar && \
     chmod 777 /opt/selenium/standalone.jar
-    
+ENV DISPLAY=:99    
 #passi all'utente 
 USER seluser
 #lanci il server con il display davanti
-CMD ["java", "-jar", "/opt/selenium/standalone.jar"]
+
+CMD ["xvfb-run", "java", "-jar", "/opt/selenium/standalone.jar"]
