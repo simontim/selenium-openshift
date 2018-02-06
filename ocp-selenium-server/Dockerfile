@@ -8,7 +8,7 @@ EXPOSE 4444 5555
 RUN yum update -y
 
 #installi browser e utility
-RUN yum install -y firefox wget tar openjdk-7-jre-headless 
+RUN yum install -y firefox wget tar java-1.8.0-openjdk 
 
 #installi il display
 RUN wget http://vault.centos.org/6.2/os/x86_64/Packages/xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm && \
