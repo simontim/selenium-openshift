@@ -8,7 +8,7 @@ RUN yum update -y
 
 #installi browser display e driver
 #scarichi selenium server 3.81
-assegni i permessi al'utente 1001
+#assegni i permessi al'utente 1001
 USER 1001
 #lanci il server con il display davanti
-CMD[ ... ]
+#CMD[ ... ]
