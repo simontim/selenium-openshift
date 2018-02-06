@@ -1,13 +1,16 @@
-#FROM registry.access.redhat.com/openshift3/ose
-FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
+FROM centos:7
+
 MAINTAINER simontim <simone.mastrodonato@telecomitalia.it>
 
 EXPOSE 4444 5555
-
-#aggiorna il sistema
+#utente
+RUN useradd seluser --shell /bin/bash --create-home && \
+    mkdir -p /opt/selenium && \
+    chown seluser:seluser /opt/selenium
+#aggiornamento
 #RUN yum update -y
 
-#installi browser e utility
+#browser e utility (provare solo openjdk-8-jre-headless)
 RUN yum install -y firefox wget tar java-1.8.0-openjdk 
 
 #installi il display
@@ -21,11 +24,11 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckod
     mv geckodriver /usr/bin && \
     rm geckodriver-v0.19.1-linux64.tar.gz
 
-#scarichi selenium server 3.81
-RUN wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.0.jar && \
-    mv selenium-server-standalone-3.9.0.jar /usr/bin
-#assegni i permessi al'utente 1001
-USER root
+#scarichi selenium server 3.9
+RUN wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.0.jar -O /opt/selenium/standalone.jar && \
+    chmod 777 /opt/selenium/standalone.jar
+    
+#passi all'utente 
+USER seluser
 #lanci il server con il display davanti
-CMD ["java", "-jar", "selenium-server-standalone-3.9.0.jar"]
-USER 1001
+CMD ["java", "-jar", "/opt/selenium/standalone.jar"]
