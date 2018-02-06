@@ -23,8 +23,7 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckod
 
 #scarichi selenium server 3.81
 RUN wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.0.jar && \
-    mv selenium-server-standalone-3.9.0.jar /usr/bin && \
-    rm selenium-server-standalone-3.9.0.jar
+    mv selenium-server-standalone-3.9.0.jar /usr/bin
 #assegni i permessi al'utente 1001
 USER 1001
 #lanci il server con il display davanti
