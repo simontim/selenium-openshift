@@ -24,7 +24,7 @@ def test_remote():
     # profile.set_preference('dom.webnotifications.enabled', False)
 
     capabilities = DesiredCapabilities.FIREFOX  # .copy()
-    capabilities['marionette'] = False
+    capabilities['marionette'] = True
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
