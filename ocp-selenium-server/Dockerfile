@@ -1,6 +1,7 @@
 FROM custom
 
-RUN DISPLAY=:99   
+RUN DISPLAY=:99
+RUN yum install -y which.x86_64
 
 #passi all'utente 
 
