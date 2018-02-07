@@ -1,6 +1,6 @@
 FROM custom
 
-ENV DISPLAY=:99
+ENV DISPLAY :99
 RUN yum install -y which.x86_64 xorg-x11-xauth.x86_64
 
 #passi all'utente 
