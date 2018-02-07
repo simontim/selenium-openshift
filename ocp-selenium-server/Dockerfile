@@ -4,7 +4,7 @@ RUN DISPLAY=:99
 
 #passi all'utente 
 
-RUN alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
-
-#lanci il server con il display davanti
-CMD ["/bin/xvfb-run", "java", "-jar", "/opt/selenium/standalone.jar"]
+#RUN alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+#USER seluser
+#lanci il server con il display davanti "/bin/xvfb-run"
+CMD ["java", "-jar", "/opt/selenium/standalone.jar"]
