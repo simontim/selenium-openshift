@@ -9,10 +9,17 @@ RUN useradd --user-group --shell /bin/false --create-home seluser
 RUN yum update -y
 
 #browser e utility (da provare openjdk-8-jre-headless)
-RUN yum install -y firefox wget tar java-1.8.0-openjdk which
+RUN yum install -y firefox wget tar java-1.8.0-openjdk which unzip
+
+RUN yum install -y chrome
 
 #installi il display
 RUN yum install -y Xvfb
+RUN wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip && \
+    unzip chromedriver_linux64.zip && \
+    mv chromedriver /usr/bin
+    rm chromedriver_linux64.zip
+
 
 #installi i driver
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz && \
