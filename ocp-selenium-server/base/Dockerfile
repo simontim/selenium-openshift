@@ -22,7 +22,7 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckod
 
 #scarichi selenium server 3.9
 RUN wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.0.jar -O /home/seluser/standalone.jar && \
-    chmod 777 /home/seluser/standalone.jar && \
+    chmod -R g+rwX /home && \
     chown -R seluser:0 /home/seluser && \
     chgrp -R 0 /home
 
@@ -31,5 +31,7 @@ EXPOSE 4444 5555
 USER seluser
 
 ENV DISPLAY=:99
+
+WORKDIR /home/seluser
 
 CMD ["xvfb-run", "java", "-jar", "/home/seluser/standalone.jar"]
