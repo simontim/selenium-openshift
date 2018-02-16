@@ -11,8 +11,6 @@ RUN yum update -y
 #browser e utility (da provare openjdk-8-jre-headless)
 RUN yum install -y firefox wget tar java-1.8.0-openjdk which unzip
 
-RUN yum install -y google-chrome-stable
-
 #installi il display
 RUN yum install -y Xvfb
 RUN wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip && \
