@@ -3,7 +3,7 @@ FROM centos:7
 MAINTAINER simontim <simone.mastrodonato@telecomitalia.it>
 
 #utente
-RUN useradd seluser --create-home
+RUN useradd --user-group --shell /bin/false --create-home seluser
     
 #aggiornamento
 RUN yum update -y
