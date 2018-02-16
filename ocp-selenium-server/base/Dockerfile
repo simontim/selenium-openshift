@@ -15,7 +15,7 @@ RUN yum install -y firefox wget tar java-1.8.0-openjdk which unzip
 RUN yum install -y Xvfb
 RUN wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip && \
     unzip chromedriver_linux64.zip && \
-    mv chromedriver /usr/bin
+    mv chromedriver /usr/bin && \
     rm chromedriver_linux64.zip
 
 
