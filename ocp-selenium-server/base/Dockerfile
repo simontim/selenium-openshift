@@ -23,7 +23,8 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckod
 #scarichi selenium server 3.9
 RUN wget http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.0.jar -O /home/seluser/standalone.jar && \
     chmod 777 /home/seluser/standalone.jar && \
-    chown -R seluser:0 /home/seluser
+    chown -R seluser:0 /home/seluser && \
+    chgrp -R 0 /home
 
 EXPOSE 4444 5555
 
