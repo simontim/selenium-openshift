@@ -23,13 +23,13 @@ def test_remote():
     # profile.accept_untrusted_certs = True
     # profile.set_preference('dom.webnotifications.enabled', False)
 
-    capabilities = DesiredCapabilities.FIREFOX  # .copy()
-    capabilities['marionette'] = False
+    
+    #capabilities['marionette'] = False
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
     driver = webdriver.Remote(command_executor='http://10.130.3.83:4444/wd/hub',
-                              desired_capabilities=capabilities)
+                              desired_capabilities=DesiredCapabilities.FIREFOX)
     driver.get("http://www.python.org")
     assert "Python" in driver.title
 
