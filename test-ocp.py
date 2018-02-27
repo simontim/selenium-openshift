@@ -23,25 +23,13 @@ def test_remote():
     # profile.accept_untrusted_certs = True
     # profile.set_preference('dom.webnotifications.enabled', False)
 
-    capabilities = DesiredCapabilities.FIREFOX  # .copy()
+    capabilities = DesiredCapabilities.CHROME  # .copy()
     capabilities['marionette'] = False
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
-    driver = webdriver.Remote(
-            #browser_profile=profile,
-            #command_executor='http://10.129.2.24:4444/wd/hub',
-         #command_executor='http://10.130.3.47:4444/wd/hub',
-            #command_executor='http://selenium-hub:4444/wd/hub',
-             #command_executor='http://127.0.0.1:4444/wd/hub',
-        #command_executor='http://156.54.176.85:4444/wd/hub',
-        
-        command_executor='http://selenium-display:4444/wd/hub',
-          #command_executor='http://stand-fire:4444/wd/hub',
+    driver = webdriver.Remote(command_executor='http://10.130.3.83:4444/wd/hub',
                               desired_capabilities=capabilities)
-
-    #        command_executor='http://156.54.176.85:4444/wd/hub'
-
     driver.get("http://www.python.org")
     assert "Python" in driver.title
 
