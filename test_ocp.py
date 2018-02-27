@@ -28,7 +28,7 @@ def test_remote():
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
-    driver = webdriver.Remote(command_executor='http://172.30.21.81:4444/wd/hub',desired_capabilities={acceptSslCerts=true, marionette=false, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[disable-infobars]}, platformName=ANY, platform=ANY})
+    driver = webdriver.Remote(command_executor='http://172.30.21.81:4444/wd/hub',desired_capabilities={acceptSslCerts=true, marionette=false, browserName=chrome, javascriptEnabled=true, platformName=ANY, platform=ANY})
     driver.get("http://www.python.org")
     assert "Python" in driver.title
 
