@@ -45,7 +45,24 @@ def test_remote2():
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
-    driver = webdriver.Remote(command_executor='http://156.54.176.85:4444/wd/hub',desired_capabilities={acceptSslCerts: true, marionette: false, browserName: chrome, javascriptEnabled: true, platformName: ANY, platform: ANY})
+    driver = webdriver.Remote(command_executor='http://156.54.176.85:4444/wd/hub',desired_capabilities=capabilities)
+    driver.get("http://www.python.org")
+    assert "Python" in driver.title
+
+    assert True
+    driver.close()
+    
+def test_remote3():
+    # profile = webdriver.FirefoxProfile()
+    # profile.accept_untrusted_certs = True
+    # profile.set_preference('dom.webnotifications.enabled', False)
+
+    capabilities = DesiredCapabilities.FIREFOX
+    capabilities['marionette'] = True
+    #capabilities['platform'] = "WINDOWS"
+    #capabilities['version'] = "7"
+
+    driver = webdriver.Remote(command_executor='http://156.54.176.85:4444/wd/hub',desired_capabilities=capabilities)
     driver.get("http://www.python.org")
     assert "Python" in driver.title
 
