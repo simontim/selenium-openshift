@@ -28,7 +28,7 @@ def test_remote():
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
-    driver = webdriver.Remote(command_executor='http://10.130.3.217:4444/wd/hub',desired_capabilities=capabilities)
+    driver = webdriver.Remote(command_executor='http://sel01:4444/wd/hub',desired_capabilities=capabilities)
     driver.get("http://www.python.org")
     assert "Python" in driver.title
 
@@ -40,12 +40,12 @@ def test_remote1():
     # profile.accept_untrusted_certs = True
     # profile.set_preference('dom.webnotifications.enabled', False)
 
-    capabilities = DesiredCapabilities.CHROME
-    capabilities['marionette'] = False
+    capabilities = DesiredCapabilities.FIREFOX
+    capabilities['marionette'] = True
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
 
-    driver = webdriver.Remote(command_executor='http://172.30.94.225:4444/wd/hub',desired_capabilities=capabilities)
+    driver = webdriver.Remote(command_executor='http://sel01:4444/wd/hub',desired_capabilities=capabilities)
     driver.get("http://www.python.org")
     assert "Python" in driver.title
 
