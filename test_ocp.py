@@ -16,7 +16,23 @@ def test_selenium():
     elem.send_keys(Keys.RETURN)
     assert "No results found." not in driver.page_source
     driver.close()
+    
+def test_remote_f():
+    # profile = webdriver.FirefoxProfile()
+    # profile.accept_untrusted_certs = True
+    # profile.set_preference('dom.webnotifications.enabled', False)
 
+    capabilities = DesiredCapabilities.FIREFOX
+    capabilities['marionette'] = True
+    #capabilities['platform'] = "WINDOWS"
+    #capabilities['version'] = "7"
+
+    driver = webdriver.Remote(command_executor='http://sel01:4444/wd/hub',desired_capabilities=capabilities)
+    driver.get("https://poc.timwork.it")
+    assert "Login" in driver.title
+
+    assert True
+    driver.close()    
 
 def test_remote():
     # profile = webdriver.FirefoxProfile()
@@ -68,6 +84,7 @@ def test_remote2():
 
     assert True
     driver.close()
+   
     
 def test_remote3():
     # profile = webdriver.FirefoxProfile()
