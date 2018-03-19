@@ -29,6 +29,7 @@ def test_remote_f():
 
     driver = webdriver.Remote(command_executor='http://sel01:4444/wd/hub',desired_capabilities=capabilities)
     driver.get("https://poc.timwork.it")
+    driver.save_screenshot('screenshot.png')
     assert "Login" in driver.title
 
     assert True
