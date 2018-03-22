@@ -41,7 +41,7 @@ def test_remote():
     # profile.set_preference('dom.webnotifications.enabled', False)
 
     capabilities = DesiredCapabilities.CHROME
-    capabilities['binary'] = "/opt/google/chrome"
+    capabilities['binary'] = "/opt/google/chrome/chrome"
     #capabilities['marionette'] = False
     #capabilities['platform'] = "WINDOWS"
     #capabilities['version'] = "7"
