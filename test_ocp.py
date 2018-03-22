@@ -44,7 +44,25 @@ def test_remote():
     capabilities['binary'] = "/opt/google/chrome/chrome"
     #capabilities['marionette'] = False
     #capabilities['platform'] = "WINDOWS"
-    #capabilities['version'] = "7"
+    capabilities['version'] = "65"
+
+    driver = webdriver.Remote(command_executor='http://sel01:4444/wd/hub',desired_capabilities=capabilities)
+    driver.get("http://www.python.org")
+    assert "Python" in driver.title
+
+    assert True
+    driver.close()
+    
+def test_remote_c():
+    # profile = webdriver.FirefoxProfile()
+    # profile.accept_untrusted_certs = True
+    # profile.set_preference('dom.webnotifications.enabled', False)
+
+    capabilities = DesiredCapabilities.CHROME.copy()
+    #capabilities['binary'] = "/opt/google/chrome/chrome"
+    #capabilities['marionette'] = False
+    #capabilities['platform'] = "WINDOWS"
+    capabilities['version'] = "65"
 
     driver = webdriver.Remote(command_executor='http://sel01:4444/wd/hub',desired_capabilities=capabilities)
     driver.get("http://www.python.org")
