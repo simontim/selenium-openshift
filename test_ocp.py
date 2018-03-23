@@ -33,7 +33,7 @@ def test_remote_f():
     assert "Login" in driver.title
 
     assert True
-    driver.close()    
+    driver.quit()    
 
 def test_remote():
     # profile = webdriver.FirefoxProfile()
@@ -69,7 +69,7 @@ def test_remote_c():
     assert "Python" in driver.title
 
     assert True
-    driver.close()
+    driver.quit()
     
 def test_remote1():
     # profile = webdriver.FirefoxProfile()
