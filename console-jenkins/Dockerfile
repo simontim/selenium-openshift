@@ -8,9 +8,7 @@ USER root
 RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
     python /home/get-pip.py && \
     pip install virtualenv && \
-    pip install virtualenvwrapper &&  \
-    yum install -y wget && \
-    yum install -y bzip2
+    pip install virtualenvwrapper
 
 RUN /usr/local/bin/install-plugins.sh sonar:2.7.1
 
