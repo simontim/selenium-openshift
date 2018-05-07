@@ -10,7 +10,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
     pip install virtualenv && \
     pip install virtualenvwrapper
 
-RUN /usr/local/bin/install-plugins.sh sonar:2.7.1
+RUN /usr/local/bin/install-plugins.sh "sonar:2.7.1"
 
 # https://github.com/openshift/jenkins/blob/master/2/contrib/jenkins/install-plugins.sh
 # The format of 'plugins.txt. is:
