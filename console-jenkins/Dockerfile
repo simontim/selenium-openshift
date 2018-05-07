@@ -12,7 +12,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
     yum install -y wget && \
     yum install -y bzip2
 
-RUN /usr/local/bin/install-plugins.sh sonar
+RUN /usr/local/bin/install-plugins.sh sonar:2.7.1
 
 # https://github.com/openshift/jenkins/blob/master/2/contrib/jenkins/install-plugins.sh
 # The format of 'plugins.txt. is:
