@@ -10,6 +10,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
     pip install virtualenv && \
     pip install virtualenvwrapper
 
+RUN yum -y install epel-release
 RUN yum install wget
 
 #installazione sonar-scanner senza plug-in
