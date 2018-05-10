@@ -11,13 +11,14 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
     pip install virtualenvwrapper
 
 #RUN yum -y install epel-release
-RUN yum --disablerepo=rhel-7-server-htb-rpms install wget
+#RUN yum --disablerepo=rhel-7-server-htb-rpms install wget
 
 #installazione sonar-scanner senza plug-in
 RUN mkdir /opt/sonar-scanner
 
 #RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
 
+RUN curl -O https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.8.zip
 
 #installazione plug-in sonar-scanner 
 #RUN touch sonar.txt && \
