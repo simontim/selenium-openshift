@@ -16,10 +16,9 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
 RUN yum install wget
 
 #installazione sonar-scanner senza plug-in
-RUN mkdir /opt/sonar-scanner
 
-
-RUN wget /opt/sonar-scanner/sonar.zip https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
+RUN wget sonar.zip https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
+RUN mkdir -p /opt/sonar-scanner
 
 #installazione plug-in sonar-scanner 
 #RUN touch sonar.txt && \
