@@ -18,9 +18,8 @@ RUN yum install wget
 #installazione sonar-scanner senza plug-in
 RUN mkdir /opt/sonar-scanner
 
-#RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
 
-RUN wget /opt/sonar-sacnner/sonar.zip https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.8.zip
+RUN wget /opt/sonar-scanner/sonar.zip https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
 
 #installazione plug-in sonar-scanner 
 #RUN touch sonar.txt && \
