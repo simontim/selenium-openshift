@@ -22,7 +22,7 @@ RUN mkdir -p /opt/sonar-scanner
 
 #installazione plug-in sonar-scanner e quality-gates
 RUN touch sonar.txt && \
-    echo sonar:2.7.1 >> sonar.txt
+    echo sonar:2.7.1 >> sonar.txt && \
     echo quality-gates:2.5 >> sonar.txt
 RUN /usr/local/bin/install-plugins.sh sonar.txt
 
