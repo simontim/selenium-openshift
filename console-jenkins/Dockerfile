@@ -15,15 +15,16 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o /home/get-pip.py && \
 
 RUN yum install wget
 
-#installazione sonar-scanner senza plug-in
+#installazione sonar-scanner senza plug-in 
 
 RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
 RUN mkdir -p /opt/sonar-scanner
 
-#installazione plug-in sonar-scanner 
-#RUN touch sonar.txt && \
-#   echo sonar:2.7.1 >> sonar.txt
-#RUN /usr/local/bin/install-plugins.sh sonar.txt
+#installazione plug-in sonar-scanner e quality-gates
+RUN touch sonar.txt && \
+    echo sonar:2.7.1 >> sonar.txt
+    echo quality-gates:2.5 >> sonar.txt
+RUN /usr/local/bin/install-plugins.sh sonar.txt
 
 # https://github.com/openshift/jenkins/blob/master/2/contrib/jenkins/install-plugins.sh
 # The format of 'plugins.txt. is:
