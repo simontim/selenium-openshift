@@ -17,9 +17,9 @@ RUN yum install wget
 
 #installazione sonar-scanner senza plug-in 
 
-RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
-RUN mkdir -p /opt/sonar-scanner
 
+RUN mkdir -p /opt/sonar-scanner
+RUN wget /opt/sonar-scanner/ https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
 #installazione plug-in sonar-scanner e quality-gates
 RUN touch sonar.txt && \
     echo sonar:2.7.1 >> sonar.txt && \
