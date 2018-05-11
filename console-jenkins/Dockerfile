@@ -19,7 +19,8 @@ RUN yum install wget
 
 
 RUN wget --no-verbose https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip -O /opt/sonar-scanner.zip && \
-    unzip /opt/sonar-scanner.zip
+    unzip /opt/sonar-scanner.zip && \
+    rm /opt/sonar-scanner.zip
 
 
 #installazione plug-in sonar-scanner e quality-gates
