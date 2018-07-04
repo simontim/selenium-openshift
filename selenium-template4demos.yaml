@@ -8,5 +8,28 @@ objects:
 - apiVersion: v1
   kind: ImageStream
   metadata:
+    labels:
+      app: ${SERVICE_NAME}
     name: ${SERVICE_NAME}
-    
+  spec:
+    tags:
+    - from:
+        kind: DockerImage
+        name: docker.io/simontim/selenium-openshift:latest
+      name: latest
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    labels:
+      app: ${SERVICE_NAME}
+    name: ${SERVICE_NAME}
+  spec:
+    strategy:
+      type: Rolling
+      rollingParams:
+        updatePeriodSeconds: 1
+        intervalSeconds: 1
+        timeoutSeconds: 600
+        maxUnavailable: 25%
+        maxSurge: 25%
+      resources: {}
