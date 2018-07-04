@@ -10,7 +10,7 @@ objects:
   metadata:
     labels:
       app: ${SERVICE_NAME}
-    name: ${SERVICE_NAME}
+    name: selenium
   spec:
     tags:
     - from:
@@ -33,3 +33,61 @@ objects:
         maxUnavailable: 25%
         maxSurge: 25%
       resources: {}
+    triggers:
+      - type: ConfigChange
+      - type: ImageChange
+        imageChangeParams:
+          automatic: true
+          containerNames:
+            - selenium
+          from:
+            kind: ImageStreamTag
+            name: 'selenium:latest'
+    replicas: 1
+    test: false
+    selector:
+      app: selenium
+      deploymentconfig: selenium
+    template:
+      metadata:
+        labels:
+          app: selenium
+      spec:
+        containers:
+          - name: selenium
+            image: " "
+            ports:
+              - containerPort:4444
+                protocol: TCP
+              - containerPort: 5555
+                protocol: TCP
+            resources:
+              limits:
+                memory: 3Gi
+              requests:
+                memory: 2Gi
+            terminationMessagePath: /dev/termination-log
+            imagePullPolicy: Always
+        restartPolicy: Always
+        terminationGracePeriodSeconds: 30
+        dnsPolicy: ClusterFirst
+        securityContext: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: selenium
+  spec:
+    ports:
+      - name: 4444-tcp
+        protocol: TCP
+        port:4444
+        targetPort: 4444
+      - name: 5555-tcp
+        protocol: TCP
+        port: 5555
+        targetPort: 5555
+    type: ClusterIP
+    selector:
+      app: selenium
+
+    
