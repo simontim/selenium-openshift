@@ -80,7 +80,7 @@ objects:
     ports:
       - name: 4444-tcp
         protocol: TCP
-        port:4444
+        port: 4444
         targetPort: 4444
       - name: 5555-tcp
         protocol: TCP
@@ -89,5 +89,14 @@ objects:
     type: ClusterIP
     selector:
       app: selenium
+- apiVersion: v1
+  kind: Route
+  metadata:
+    name: selenium
+  spec:
+    to:
+      kind: Service
+      name: selenium
+    port:
+      targetPort: 4444-tcp
 
-    
