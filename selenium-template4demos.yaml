@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: selenium-template4demos
+  description: Selenium template for Demos
+  tags: ci,selenium
+objects:
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    name: ${SERVICE_NAME}
+    
