@@ -40,7 +40,7 @@ objects:
     test: false
     selector:
       app: ${SERVICE_NAME}
-      deploymentconfig: selenium
+      deploymentconfig: ${SERVICE_NAME}
     template:
       metadata:
         labels:
@@ -103,6 +103,6 @@ objects:
 parameters:
 - displayName: Selenium Service Name
   name: SERVICE_NAME
-  required: true
+  required: false
   value: selenium
 
