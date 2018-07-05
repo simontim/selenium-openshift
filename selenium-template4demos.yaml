@@ -36,13 +36,13 @@ objects:
     triggers:
       - type: ConfigChange
       - type: ImageChange
-      - imageChangeParams:
+        imageChangeParams:
           automatic: true
           containerNames:
             - ${SERVICE_NAME}
           from:
             kind: ImageStreamTag
-            name: '${SERVICE_NAME}:latest'
+            name: ${SERVICE_NAME}:latest
     replicas: 1
     test: false
     selector:
