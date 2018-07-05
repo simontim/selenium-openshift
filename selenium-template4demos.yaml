@@ -22,6 +22,7 @@ objects:
   metadata:
     labels:
       app: ${SERVICE_NAME}
+      deploymentconfig: ${SERVICE_NAME}
     name: ${SERVICE_NAME}
   spec:
     replicas: 1
