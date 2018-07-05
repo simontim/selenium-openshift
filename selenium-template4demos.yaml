@@ -57,7 +57,7 @@ objects:
           - name: selenium
             image: " "
             ports:
-              - containerPort:4444
+              - containerPort: 4444
                 protocol: TCP
               - containerPort: 5555
                 protocol: TCP
