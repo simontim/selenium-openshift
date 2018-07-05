@@ -51,7 +51,7 @@ objects:
     template:
       metadata:
         labels:
-          app: selenium
+          deploymentconfig: ${SERVICE_NAME}
       spec:
         containers:
           - name: selenium
