@@ -15,7 +15,7 @@ objects:
     tags:
     - from:
         kind: DockerImage
-        name: docker.io/simontim/selenium-openshift:latest
+        name: docker.io/simontim/selenium-openshift
       name: latest
 - apiVersion: v1
   kind: DeploymentConfig
@@ -99,4 +99,9 @@ objects:
       name: selenium
     port:
       targetPort: 4444-tcp
+parameters:
+- displayName: Selenium Service Name
+  name: SERVICE_NAME
+  required: true
+  value: selenium
 
