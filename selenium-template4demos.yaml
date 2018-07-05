@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: selenium-template4demos
   description: Selenium template for Demos
-  tags: ci,selenium
+  tags: ci
 objects:
 - apiVersion: v1
   kind: ImageStream
