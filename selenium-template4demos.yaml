@@ -46,8 +46,7 @@ objects:
     replicas: 1
     test: false
     selector:
-      app: selenium
-      deploymentconfig: selenium
+      deploymentconfig: ${SERVICE_NAME}
     template:
       metadata:
         labels:
