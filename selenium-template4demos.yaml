@@ -59,14 +59,14 @@ objects:
             terminationMessagePath: /dev/termination-log
             imagePullPolicy: Always
         triggers:
-        - type: ImageChange
-          imageChangeParams:
+        - imageChangeParams:
             automatic: true
             containerNames:
-            - ${SERVICE_NAME}
+              - ${SERVICE_NAME}
             from:
               kind: ImageStreamTag
               name: ${SERVICE_NAME}:latest
+          type: ImageChange
         - type: ConfigChange  
 - apiVersion: v1
   kind: Service
