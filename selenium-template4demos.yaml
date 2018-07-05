@@ -10,12 +10,12 @@ objects:
   metadata:
     labels:
       app: ${SERVICE_NAME}
-    name: selenium
+    name: ${SERVICE_NAME}
   spec:
     tags:
     - from:
         kind: DockerImage
-        name: docker.io/simontim/selenium-openshift
+        name: docker.io/simontim/selenium-openshift:latest
       name: latest
 - apiVersion: v1
   kind: DeploymentConfig
@@ -36,13 +36,13 @@ objects:
     triggers:
       - type: ConfigChange
       - type: ImageChange
-        imageChangeParams:
+      - imageChangeParams:
           automatic: true
           containerNames:
-            - selenium
+            - ${SERVICE_NAME}
           from:
             kind: ImageStreamTag
-            name: 'selenium:latest'
+            name: '${SERVICE_NAME}:latest'
     replicas: 1
     test: false
     selector:
@@ -53,7 +53,7 @@ objects:
           deploymentconfig: ${SERVICE_NAME}
       spec:
         containers:
-          - name: selenium
+          - name: ${SERVICE_NAME}
             image: " "
             ports:
               - containerPort: 4444
@@ -74,7 +74,9 @@ objects:
 - apiVersion: v1
   kind: Service
   metadata:
-    name: selenium
+    labels:
+      app: ${SERVICE_NAME}
+    name: ${SERVICE_NAME}
   spec:
     ports:
       - name: 4444-tcp
@@ -87,15 +89,16 @@ objects:
         targetPort: 5555
     type: ClusterIP
     selector:
-      app: selenium
+      deploymentconfig: ${SERVICE_NAME}
 - apiVersion: v1
   kind: Route
   metadata:
-    name: selenium
+    labels: ${SERVICE_NAME}
+    name: ${SERVICE_NAME}
   spec:
     to:
       kind: Service
-      name: selenium
+      name: ${SERVICE_NAME}
     port:
       targetPort: 4444-tcp
 parameters:
