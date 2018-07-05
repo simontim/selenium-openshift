@@ -25,9 +25,6 @@ objects:
     name: ${SERVICE_NAME}
   spec:
     replicas: 1
-    selector:
-      app: ${SERVICE_NAME}
-      deploymentconfig: ${SERVICE_NAME}
     strategy:
       activeDeadlineSeconds: 21600
       rollingParams:
@@ -45,6 +42,7 @@ objects:
       metadata:
         labels:
           app: ${SERVICE_NAME}
+          deploymentconfig: ${SERVICE_NAME}
       spec:
         restartPolicy: Always
         terminationGracePeriodSeconds: 30
